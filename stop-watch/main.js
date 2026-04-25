@@ -14,17 +14,17 @@ startBtn.addEventListener("click",function(){
     clearInterval(timerId);
     timerId = setInterval( function () {
     timer++;
-        const ms  = timer % 10;
-        const sec = Math.floor(timer / 10) % 60;
-        const min = Math.floor(timer / 600) % 60;
-        const h   = Math.floor(timer / 36000);
+        const ms  = timer % 100;
+        const sec = Math.floor(timer / 100) % 60;
+        const min = Math.floor(timer / 6000) % 60;
+        const h   = Math.floor(timer / 360000);
 
         display.textContent =
             String(h).padStart(2, "0") + ":" +
             String(min).padStart(2, "0") + ":" +
             String(sec).padStart(2, "0") + ":" +
             String(ms).padStart(2, "0");
-    }, 100);
+    }, 10);
 });
 
 
